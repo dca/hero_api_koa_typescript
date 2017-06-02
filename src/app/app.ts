@@ -2,7 +2,7 @@
 import * as Koa from 'koa'
 import * as bodyParser from 'koa-bodyparser'
 
-import router from '../routes'
+import router from './router'
 
 const app = new Koa()
 

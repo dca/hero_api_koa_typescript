@@ -1,10 +1,10 @@
 
-import * as Router from 'koa-router';
+import * as Router from 'koa-router'
 
-const router = new Router();
+const router = new Router()
 
 router.get('/', async (ctx, next) => {
-  ctx.body = 'Hello world';
-});
+  ctx.body = 'Hello world'
+})
 
-export default router;
+export default router

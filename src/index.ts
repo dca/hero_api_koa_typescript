@@ -1,16 +1,16 @@
 
 import * as Koa from 'koa'
-import * as bodyParser from 'koa-bodyparser';
+import * as bodyParser from 'koa-bodyparser'
 
-import router from './routes';
+import router from './routes'
 
 const app = new Koa()
-const port = process.env.PORT || 5555;
+const port = process.env.PORT || 5555
 
-app.use(bodyParser())
+app.use(bodyParser() )
    .use(router.routes())
-   .use(router.allowedMethods());
+   .use(router.allowedMethods())
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port, () => console.log(`Listening on port ${port}`))
 
-export default app;
+export default app

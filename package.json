@@ -5,12 +5,20 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tslint --type-check --project ./tsconfig.json --fix src/**/*.ts test/**/*.ts",
+    "test:mocha": "mocha -r ts-node/register test/**/*.test.ts",
+    "test": "npm run lint; npm run test:mocha"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "~4.0.0",
+    "@types/mocha": "~2.2.41",
+    "chai": "~4.0.1",
+    "mocha": "~3.4.2",
     "ts-node": "~3.0.4",
+    "tslint": "~5.4.2",
+    "tslint-config-standard": "~5.0.2",
     "typescript": "~2.3.4"
   },
   "dependencies": {

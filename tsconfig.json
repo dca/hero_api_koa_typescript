@@ -1,15 +1,21 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "es2017",
+    "strict": true,
     "noImplicitAny": true,
+    "strictNullChecks": true,
     "sourceMap": true,
     "outDir": "./build",
-    "rootDir": "./src"
+    "rootDirs": [
+      "./src",
+      "./test"
+    ]
   },
   "compileOnSave": false,
   "filesGlob": [
-    "./src/**/*.ts"
+    "./src/**/*.ts",
+    "./test/**/*.ts"
   ],
   "exclude": [
     "node_modules"

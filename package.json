@@ -1,0 +1,25 @@
+{
+  "name": "hero_api_koa_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "~3.0.4",
+    "typescript": "~2.3.4"
+  },
+  "dependencies": {
+    "@types/koa": "~2.0.39",
+    "@types/koa-bodyparser": "~3.0.23",
+    "@types/koa-router": "~7.0.22",
+    "@types/node": "~7.0.23",
+    "koa": "~2.2.0",
+    "koa-bodyparser": "~4.2.0",
+    "koa-router": "~7.2.0"
+  }
+}

@@ -1,5 +1,6 @@
 
-import app from '../src/app/app'
+import '../init'
+import app from '../../src/app/app'
 import { expect } from 'chai'
 import 'mocha'
 

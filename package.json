@@ -4,16 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/start.ts",
+    "dev": "NODE_ENV=development ts-node src/start.ts",
     "lint": "tslint --type-check --project ./tsconfig.json --fix src/**/*.ts test/**/*.ts",
-    "test:mocha": "mocha -r ts-node/register test/**/*.test.ts",
+    "test:mocha": "NODE_ENV=test mocha -r ts-node/register test/**/*.test.ts",
     "test": "npm run lint; npm run test:mocha"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/chai": "~4.0.0",
-    "@types/mocha": "~2.2.41",
     "chai": "~4.0.1",
     "mocha": "~3.4.2",
     "ts-node": "~3.0.4",
@@ -22,10 +20,13 @@
     "typescript": "~2.3.4"
   },
   "dependencies": {
+    "@types/chai": "~4.0.0",
+    "@types/mocha": "~2.2.41",
     "@types/koa": "~2.0.39",
     "@types/koa-bodyparser": "~3.0.23",
     "@types/koa-router": "~7.0.22",
     "@types/node": "~7.0.23",
+    "axios": "~0.16.1",
     "koa": "~2.2.0",
     "koa-bodyparser": "~4.2.0",
     "koa-router": "~7.2.0"

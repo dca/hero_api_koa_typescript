@@ -1,30 +1,19 @@
 
 import * as Koa from 'koa'
 import axios from 'axios'
+import proxy from '../proxy'
+
+import * as Debug from 'debug'
+const debug = Debug('app:route:heroes:list')
 
 module.exports = async (ctx: Koa.Context, next: () => Promise<any>): Promise<any> => {
 
-  let { data } = await axios.get('http://hahow-recruit.herokuapp.com/heroes')
-  // TODO 錯誤處理
+  let heroes = await proxy.heroes.fetchAll()
 
+  debug('ctx.isAuthorized', ctx.isAuthorized)
   if (ctx.isAuthorized === true) {
-
-    let heroes: any = data
-
-    heroes.map(async (hero: any) => {
-      //
-      let { data } = await axios.request({
-        url: `http://hahow-recruit.herokuapp.com/heroes/${hero.id}/profile`,
-        method: 'get',
-        headers: {
-          Name: ctx.request.headers.name,
-          Password: ctx.request.headers.password
-        }
-      })
-      hero.profile = data
-      return hero
-    })
+    heroes = await proxy.heroes.fetchAllProfile(heroes)
   }
 
-  ctx.body = data
+  ctx.body = heroes
 }

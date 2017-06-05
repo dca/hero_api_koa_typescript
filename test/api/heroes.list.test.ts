@@ -15,4 +15,19 @@ describe('heroes list', () => {
     expect(status).to.be.equal(200)
     expect(data).to.a('array')
   })
+
+  it('should return array', async () => {
+    let { status, data } = await axios.request({
+      url: 'http://localhost:8888/heroes',
+      method: 'get',
+      headers: {
+        Name: 'hahow',
+        Password: 'rocks'
+      }
+    })
+    debug('response %j', data)
+
+    expect(status).to.be.equal(200)
+    expect(data).to.a('array')
+  })
 })

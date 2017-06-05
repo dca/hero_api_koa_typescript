@@ -10,6 +10,10 @@
     "rootDirs": [
       "./src",
       "./test"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "src/typings"
     ]
   },
   "compileOnSave": false,

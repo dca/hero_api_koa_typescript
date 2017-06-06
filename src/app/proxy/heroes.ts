@@ -3,12 +3,13 @@ import services from '../services'
 
 // fetchOne
 export async function fetchOne (id: string): Promise<any > {
-  return await services.hahow.fetchHeroOne(id)
+  return services.hahow.fetchHeroOne(id)
 }
 
 // fetchAll
 export async function fetchAll (): Promise<any > {
-  return await services.hahow.fetchHeroAll()
+  let heroes = await services.hahow.fetchHeroAll()
+  return heroes
 }
 
 // fetchProfile

@@ -8,7 +8,8 @@ const debug = Debug('app:route:heroes:show')
 
 module.exports = async (ctx: Koa.Context, next: () => Promise<any>): Promise<any> => {
 
-  let hero = await proxy.heroes.fetchOne('1')
+  const heroId: string = ctx.params.heroId
+  let hero = await proxy.heroes.fetchOne(heroId)
 
   debug('ctx.isAuthorized', ctx.isAuthorized)
   if (ctx.isAuthorized === true) {

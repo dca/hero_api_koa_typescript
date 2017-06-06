@@ -9,6 +9,7 @@ const debug = Debug('app:route:heroes:list')
 module.exports = async (ctx: Koa.Context, next: () => Promise<any>): Promise<any> => {
 
   let heroes = await proxy.heroes.fetchAll()
+  debug('heroes %j', heroes)
 
   debug('ctx.isAuthorized', ctx.isAuthorized)
   if (ctx.isAuthorized === true) {

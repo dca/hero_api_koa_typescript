@@ -13,14 +13,14 @@ export default async (ctx: Koa.Context, next: () => Promise<any>): Promise<any> 
   } catch (err) {
     debug('new error')
     let error = err
-    let status = error.status || 500
-    let message = error.message || 'server error'
+    let status = err.status || 500
+    let message: string = err.message || 'server error'
 
     // ensure is Error
     if (!(error instanceof Error)) {
       const originalError = err
       error = new Error(message)
-      error.code = error.code
+      error.code = err.code
       error.originalError = originalError
     }
 

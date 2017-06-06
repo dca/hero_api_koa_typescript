@@ -14,3 +14,14 @@ app.use(bodyParser())
    .use(router.allowedMethods())
 
 export default app
+
+/*
+*
+*/
+import * as Debug from 'debug'
+const debug = Debug('app:onerror')
+
+app.on('error', (err: any, ctx: Koa.Context) => {
+    // TODO log or doSomething
+  debug(err)
+})

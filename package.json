@@ -21,14 +21,16 @@
   },
   "dependencies": {
     "@types/chai": "~4.0.0",
-    "@types/mocha": "~2.2.41",
     "@types/koa": "~2.0.39",
     "@types/koa-bodyparser": "~3.0.23",
     "@types/koa-router": "~7.0.22",
+    "@types/mocha": "~2.2.41",
     "@types/node": "~7.0.23",
+    "@types/sinon": "~2.3.0",
     "axios": "~0.16.1",
     "koa": "~2.2.0",
     "koa-bodyparser": "~4.2.0",
-    "koa-router": "~7.2.0"
+    "koa-router": "~7.2.0",
+    "sinon": "~2.3.2"
   }
 }

@@ -16,9 +16,9 @@ dev mode
 npm run dev
 ```
 
-## 架構
+with docker 
 
-## 第三方套件
-
-## How to use
-## How to use
+```
+docker build -t hero_api .
+docker run -it --rm -p 5555:5555 hero_api
+```
